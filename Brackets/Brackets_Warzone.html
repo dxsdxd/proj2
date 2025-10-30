@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brackets Warzone - Torneo Local</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Staatliches', sans-serif;
+      background: linear-gradient(180deg, #0f1a0f 0%, #1b2b1b 100%);
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin: 30px 0;
+      font-size: 3rem;
+      color: #9acd32;
+      text-shadow: 0 0 15px #003300;
+      letter-spacing: 3px;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 95%;
+      max-width: 1400px;
+      margin-bottom: 40px;
+    }
+
+    .brackets {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    .lado {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .ronda {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .equipo {
+      background: rgba(40, 60, 40, 0.9);
+      border: 2px solid #4b6043;
+      border-radius: 6px;
+      padding: 10px 15px;
+      min-width: 170px;
+      text-align: center;
+      font-weight: bold;
+      color: #d4e157;
+      box-shadow: 0 0 10px #1a331a inset;
+      transition: all 0.3s ease;
+    }
+
+    .equipo:hover {
+      background: #2e462e;
+      box-shadow: 0 0 15px #76ff03;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .final {
+      margin-top: 30px;
+      background: #203020;
+      padding: 15px 25px;
+      border: 3px solid #9acd32;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.3rem;
+      box-shadow: 0 0 20px #4caf50;
+    }
+
+    .titulo-seccion {
+      margin-top: 40px;
+      font-size: 1.8rem;
+      color: #9acd32;
+      text-shadow: 0 0 10px #335533;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      background-color: #0c130c;
+      border-top: 2px solid #4caf50;
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #76ff03;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🪖WARZONE - TORNEO LOCAL 🪖</h1>
+
+  <div class="contenedor">
+    <h2 class="titulo-seccion">Ganadores</h2>
+    <div class="brackets">
+      <div class="lado">
+        <div class="ronda">
+          <div class="equipo">Equipo A</div>
+          <div class="equipo">Equipo B</div>
+          <div class="equipo">Equipo C</div>
+          <div class="equipo">Equipo D</div>
+        </div>
+      </div>
+
+      <div class="lado">
+        <div class="ronda">
+          <div class="equipo">Equipo E</div>
+          <div class="equipo">Equipo F</div>
+          <div class="equipo">Equipo G</div>
+          <div class="equipo">Equipo H</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="final">🏆 Ganador de Ganadores</div>
+
+    <h2 class="titulo-seccion">Perdedores</h2>
+    <div class="brackets">
+      <div class="lado">
+        <div class="ronda">
+          <div class="equipo">Equipo I</div>
+          <div class="equipo">Equipo J</div>
+          <div class="equipo">Equipo K</div>
+          <div class="equipo">Equipo L</div>
+        </div>
+      </div>
+
+      <div class="lado">
+        <div class="ronda">
+          <div class="equipo">Equipo M</div>
+          <div class="equipo">Equipo N</div>
+          <div class="equipo">Equipo O</div>
+          <div class="equipo">Equipo P</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="final">💀 Ganador de Perdedores</div>
+  </div>
+
+  <footer>
+    <p>Cualquier duda o apoyo favor de comunicarte a 
+      <a href="mailto:torneonexusapoyo@gmail.com">torneonexusapoyo@gmail.com</a>
+    </p>
+  </footer>
+
+</body>
+</html>

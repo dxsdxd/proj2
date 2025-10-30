@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overwatch 2 - Torneo Nexus</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      filter: brightness(0.75);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 165, 0, 0.1);
+      z-index: -1;
+    }
+
+    .contenido {
+      z-index: 1;
+      margin-top: 12vh;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3.8rem;
+      color: #ffa600;
+      text-shadow: 0 0 20px #ffb347, 0 0 50px #ff8c00;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 0 auto 50px;
+      color: #f3f3f3;
+      line-height: 1.6;
+      text-shadow: 0 0 8px #000;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      position: relative;
+      padding: 14px 45px;
+      border: 2px solid #ffa600;
+      border-radius: 50px;
+      background: transparent;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      overflow: hidden;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: all 0.5s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      background: #ffa600;
+      color: #1a1a1a;
+      box-shadow: 0 0 25px #ffa600, 0 0 45px #ff8c00 inset;
+      transform: translateY(-3px);
+    }
+
+    .btn-secundario {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .btn-secundario:hover {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 20px #fff;
+      color: #ffa600;
+    }
+
+    footer {
+      position: relative;
+      bottom: -45px;
+      width: 100%;
+      padding: 15px 0;
+      background: rgba(20, 20, 20, 0.9);
+      border-top: 2px solid #ffa600;
+      color: #ccc;
+      font-size: 0.9rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer a {
+      color: #ffcc70;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop>
+    <source src="/Videos/Overwatch2.mp4" type="video/mp4">
+    Tu navegador no soporta videos de fondo.
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="contenido">
+    <h1>Overwatch 2</h1>
+    <p>Forma parte del Torneo Nexus y demuestra tu habilidad en Overwatch 2.<br>
+       Coordina a tu escuadrón, protege los objetivos y lleva a tu equipo a la victoria.</p>
+
+    <div class="botones">
+      <button class="btn-secundario btn" onclick="window.location.href='index.php'">Regresar</button>
+      <button class="btn" onclick="window.location.href='Registros/Registro_Overwatch.php'">Registrar Equipo</button>
+      <button class="btn" onclick="window.location.href='Brackets/Brackets_Overwatch.html'">Ver Brackets</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Cualquier duda o apoyo favor de comunicarte a 
+      <a href="mailto:torneonexusapoyo@gmail.com">torneonexusapoyo@gmail.com</a>
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvel Rivals - Torneo Nexus</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Poppins:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      background: #000;
+    }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -3;
+      filter: brightness(0.6) contrast(1.2) saturate(1.1);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(255,0,0,0.25), rgba(0,0,30,0.7));
+      z-index: -2;
+      animation: pulsoCosmico 6s infinite ease-in-out alternate;
+    }
+
+    @keyframes pulsoCosmico {
+      0% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+
+    .energia {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-radial-gradient(circle, rgba(0,150,255,0.05) 0, transparent 2px);
+      z-index: -1;
+      animation: energiaFlotar 8s linear infinite;
+    }
+
+    @keyframes energiaFlotar {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 4rem;
+      letter-spacing: 3px;
+      color: #ff2d2d;
+      text-shadow: 
+        0 0 15px #ff0000, 
+        0 0 30px #ff9900, 
+        0 0 50px #ffffff;
+      margin-top: 14vh;
+      animation: entradaHeroe 1.5s ease-out;
+    }
+
+    @keyframes entradaHeroe {
+      from { transform: scale(0.7) rotateX(70deg); opacity: 0; }
+      to { transform: scale(1) rotateX(0deg); opacity: 1; }
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #00baff;
+      text-shadow: 0 0 20px #00e5ff;
+      margin-top: 10px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    p {
+      margin-top: 30px;
+      max-width: 800px;
+      color: #e0e0ff;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      text-shadow: 0 0 10px #000;
+      animation: fadeIn 2.5s ease-out;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      position: relative;
+      padding: 14px 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 2px solid;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      letter-spacing: 1px;
+      background: rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: rotate(25deg);
+      transition: all 0.6s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn-regresar {
+      border-color: #ff2d2d;
+      color: #ff2d2d;
+      box-shadow: 0 0 15px #ff2d2d;
+    }
+    .btn-regresar:hover {
+      background: #ff2d2d;
+      color: #fff;
+      box-shadow: 0 0 25px #ff9900;
+      transform: scale(1.05);
+    }
+
+    .btn-registrar {
+      border-color: #00baff;
+      color: #00baff;
+      box-shadow: 0 0 15px #00baff;
+    }
+    .btn-registrar:hover {
+      background: #00baff;
+      color: #000;
+      box-shadow: 0 0 25px #00ffff;
+      transform: scale(1.05);
+    }
+
+    .btn-brackets {
+      border-color: #ffd700;
+      color: #ffd700;
+      box-shadow: 0 0 15px #ffd700;
+    }
+    .btn-brackets:hover {
+      background: #ffd700;
+      color: #000;
+      box-shadow: 0 0 25px #ffb300;
+      transform: scale(1.05);
+    }
+
+    footer {
+  position: relative;
+  width: 100%;
+  padding: 15px 0;
+  background: rgba(10, 0, 20, 0.9);
+  border-top: 2px solid #ff2d2d;
+  color: #ccc;
+  font-size: 0.95rem;
+  text-align: center;
+  text-shadow: 0 0 10px #000;
+  margin-top: -15px; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 55px; 
+}
+
+    footer a {
+      color: #00baff;
+      text-decoration: none;
+      margin-left: 5px;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop>
+    <source src="/Videos/MarvelRivals.mp4" type="video/mp4">
+    Tu navegador no soporta videos de fondo.
+  </video>
+
+  <div class="overlay"></div>
+  <div class="energia"></div>
+
+  <div class="contenido">
+    <h1>MARVEL RIVALS</h1>
+    <h2>Torneo Nexus - Multiversal Showdown</h2>
+    <p>Los héroes y villanos se enfrentan por el control del multiverso.  
+       ¡Forma tu escuadrón, libera tus poderes y demuestra que eres el campeón supremo del Torneo Nexus!</p>
+
+    <div class="botones">
+      <button class="btn btn-regresar" onclick="window.location.href='index.php'">Regresar</button>
+      <button class="btn btn-registrar" onclick="window.location.href='Registros/Registro_MarvelRivals.php'">Registrar Equipo</button>
+      <button class="btn btn-brackets" onclick="window.location.href='Brackets/Brackets_MarvelRivals.html'">Ver Brackets</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Cualquier duda o apoyo favor de comunicarte a 
+      <a href="mailto:torneonexusapoyo@gmail.com">torneonexusapoyo@gmail.com</a>
+    </p>
+  </footer>
+
+</body>
+</html>
